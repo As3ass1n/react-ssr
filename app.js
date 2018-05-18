@@ -1,19 +1,16 @@
-const register = require("babel-register");
+const register = require('babel-register');
 
 register({
-  presets: ["react", "env"],
-  extensions: [".js"]
+  presets: ['react', 'env'],
+  extensions: ['.js'],
 });
 
-const path = require("path");
-const react = require("react");
-const reactDOMServer = require("react-dom/server");
-const reactView = require("koa-react-view");
-const Koa = require("koa");
-const Router = require("koa-router");
-const staticServer = require("koa-static");
+const path = require('path');
+const Koa = require('koa');
+const Router = require('koa-router');
+const staticServer = require('koa-static');
 
-const string = require("./server");
+const string = require('./src/server/transpile');
 
 const app = new Koa();
 const router = new Router();
@@ -25,9 +22,9 @@ const router = new Router();
 //   extname: "js"
 // });
 
-app.use(staticServer(`${__dirname}/build`));
+app.use(staticServer(path.join(__dirname, 'dist')));
 
-router.get("/", ctx => {
+router.get('/', (ctx) => {
   ctx.body = `<!DOCTYPE html>
   <html lang="en">
   <head>
@@ -38,7 +35,7 @@ router.get("/", ctx => {
   </head>
   <body>
     <div id="root">${string}</div>
-    <script src="bundle.js"></script>
+    <script src="client/bundle.js"></script>
   </body>
   </html>`;
 });

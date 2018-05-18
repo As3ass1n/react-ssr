@@ -20,6 +20,7 @@ module.exports = class App extends Component {
     return (
       <div>
         Click:<button onClick={this.click}>click me</button>
+        <div>num: {`${this.state.counter}`}</div>
       </div>
     );
   }

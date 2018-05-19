@@ -7,9 +7,9 @@
   其实这个主要是因为一些搜索引擎是不会去执行请求到的js的。所以就需要服务端直接返回一些必要的html以供搜索引擎进行爬取。
 2. __首屏性能问题__  
   客户端渲染的话它的具体流程如下：
-  ![Client][https://cloud.githubusercontent.com/assets/10385585/15772984/0cc47cfe-29a7-11e6-94ad-3cd4b82daabb.png]
+  ![Client](https://cloud.githubusercontent.com/assets/10385585/15772984/0cc47cfe-29a7-11e6-94ad-3cd4b82daabb.png)
   服务端渲染流程：
-  ![Server][https://images2015.cnblogs.com/blog/1060770/201707/1060770-20170706133929925-1128607920.png]  
+  ![Server](https://images2015.cnblogs.com/blog/1060770/201707/1060770-20170706133929925-1128607920.png)  
   对比一下的话其实就是把前后端分离的模式改成了使用node作为中间层去获取数据并将数据生成到html上然后返回给前端。这样也就减少了js文件的加载时间。
 
 ### 2.项目搭建

@@ -6,7 +6,7 @@ module.exports = {
   entry: './src/client/app.js',
   output: {
     path: path.resolve(__dirname, 'dist/client'),
-    filename: '[chunkhash:8].bundle.js',
+    filename: '[hash:8].bundle.js',
     publicPath: '/',
   },
   devtool: 'cheap-module-source-map',
@@ -35,5 +35,6 @@ module.exports = {
     contentBase: path.resolve(__dirname, 'dist/client'),
     inline: true,
     hot: true,
+    port: 8010,
   },
 };

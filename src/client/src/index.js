@@ -22,7 +22,7 @@ export default class Index extends Component {
 
     return (
       <div>
-        <div><button onClick={Index.loadPageC}>load page caaa</button></div>
+        <div><button onClick={Index.loadPageC}>load page caaaa</button></div>
         <div><button onClick={Index.loadPageB}>load page b</button></div>
       </div>
     );
